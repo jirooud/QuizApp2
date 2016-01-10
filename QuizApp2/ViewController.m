@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "resultViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 NSInteger quizCount;
 NSInteger totalQuiz =5;
@@ -21,6 +22,9 @@ NSTimer *timer;
     BOOL isAnswerButtonsEnable;
 }
 
+@property (strong, nonatomic) NSString *sound;
+@property (strong, nonatomic) AVAudioPlayer *player;
+
 @end
 
 @implementation ViewController
@@ -30,6 +34,7 @@ NSTimer *timer;
     // Do any additional setup after loading the view, typically from a nib.
     numberAry = [NSMutableArray array];
     isAnswerButtonsEnable = YES;
+    [self sound];
     //配列に発生させたい範囲の乱数を格納する。
     for (int i = 0; i < 10; i++){
         [numberAry addObject:[NSString stringWithFormat:@"%d",i]];
@@ -147,8 +152,10 @@ NSTimer *timer;
         if (answer ==YES){
             correctCount++;
             self.problem.text = @"正解";
+            [self crrectSound:self.sound];
         }else{
             self.problem.text = @"不正解";
+            [self blipSound:self.sound];
         }
         [self startTimer];
     }
@@ -162,8 +169,10 @@ NSTimer *timer;
         if (answer ==NO){
             correctCount++;
             self.problem.text = @"正解";
+            [self crrectSound:self.sound];
         }else{
             self.problem.text = @"不正解";
+            [self blipSound:self.sound];
         }
         [self startTimer];
     }
@@ -172,6 +181,40 @@ NSTimer *timer;
 //正解不正解表示時間
 - (void)startTimer{
     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(oneSecond:)userInfo:nil repeats:NO];
+}
+
+- (void)crrectSound:(NSString*)scaleName
+{
+    //音楽ファイル名を作成
+    NSString *soundFileName = [NSString stringWithFormat:@"crrect_answer1"];
+    //音楽ファイルのファイルパス(音楽ファイルがデータ上どこにあるか)を作成
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:soundFileName ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    //エラーを受け取る変数の準備
+    NSError *error = nil;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (error != nil) { //エラーがあった場合
+        return;
+    }
+    [self.player play];
+}
+
+- (void)blipSound:(NSString*)scaleName
+{
+    //音楽ファイル名を作成
+    NSString *soundFileName = [NSString stringWithFormat:@"blip01"];
+    //音楽ファイルのファイルパス(音楽ファイルがデータ上どこにあるか)を作成
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:soundFileName ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    //エラーを受け取る変数の準備
+    NSError *error = nil;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (error != nil) { //エラーがあった場合
+        return;
+    }
+    [self.player play];
 }
 
 @end

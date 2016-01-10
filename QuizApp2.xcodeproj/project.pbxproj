@@ -16,6 +16,8 @@
 		F34BD52C1C4219BD0022E240 /* batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD52A1C4219BD0022E240 /* batsu.png */; };
 		F34BD52D1C4219BD0022E240 /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD52B1C4219BD0022E240 /* maru.png */; };
 		F3FFD72B1C426D8900F13E7D /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FFD72A1C426D8900F13E7D /* ResultViewController.m */; };
+		F3FFD72D1C43029F00F13E7D /* blip01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3FFD72C1C43029F00F13E7D /* blip01.mp3 */; };
+		F3FFD72F1C4302B100F13E7D /* crrect_answer1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3FFD72E1C4302B100F13E7D /* crrect_answer1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		F34BD52B1C4219BD0022E240 /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
 		F3FFD7291C426D8900F13E7D /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		F3FFD72A1C426D8900F13E7D /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		F3FFD72C1C43029F00F13E7D /* blip01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blip01.mp3; sourceTree = "<group>"; };
+		F3FFD72E1C4302B100F13E7D /* crrect_answer1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crrect_answer1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		F34BD5131C42196F0022E240 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3FFD72C1C43029F00F13E7D /* blip01.mp3 */,
+				F3FFD72E1C4302B100F13E7D /* crrect_answer1.mp3 */,
 				F34BD52A1C4219BD0022E240 /* batsu.png */,
 				F34BD52B1C4219BD0022E240 /* maru.png */,
 				F34BD5141C42196F0022E240 /* main.m */,
@@ -147,10 +153,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3FFD72D1C43029F00F13E7D /* blip01.mp3 in Resources */,
 				F34BD5231C42196F0022E240 /* LaunchScreen.storyboard in Resources */,
 				F34BD52D1C4219BD0022E240 /* maru.png in Resources */,
 				F34BD5201C42196F0022E240 /* Assets.xcassets in Resources */,
 				F34BD51E1C42196F0022E240 /* Main.storyboard in Resources */,
+				F3FFD72F1C4302B100F13E7D /* crrect_answer1.mp3 in Resources */,
 				F34BD52C1C4219BD0022E240 /* batsu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
