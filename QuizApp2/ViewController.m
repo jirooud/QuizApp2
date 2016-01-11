@@ -14,7 +14,7 @@ NSInteger quizCount;
 NSInteger totalQuiz =5;
 NSTimer *timer;
 
-@interface ViewController (){
+@interface ViewController () {
     NSMutableArray *numberAry;
     NSInteger questionNumber;
     NSInteger correctCount;
@@ -36,7 +36,7 @@ NSTimer *timer;
     isAnswerButtonsEnable = YES;
     [self sound];
     //配列に発生させたい範囲の乱数を格納する。
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++) {
         [numberAry addObject:[NSString stringWithFormat:@"%d",i]];
     }
     [self indication];
@@ -63,20 +63,20 @@ NSTimer *timer;
 }
 
 //最初の問題表示
-- (void)indication{
+- (void)indication {
     [self collection];
 }
 
 //ボタン再有効
-- (void)oneSecond:(NSTimer*)timer{
+- (void)oneSecond:(NSTimer*)timer {
     isAnswerButtonsEnable = YES;
     [self nextQuiz];
 }
 
 //次のクイズと5問終えたらresultViewに移動
-- (void)nextQuiz{
+- (void)nextQuiz {
     quizCount++;
-    if(quizCount < totalQuiz){
+    if(quizCount < totalQuiz) {
         [self collection];
     } else {
         NSLog(@"%d",(int)numberAry.count);
@@ -95,11 +95,11 @@ NSTimer *timer;
 }
 
 //テキストに表示する問題集10問
-- (void)collection{
+- (void)collection {
     NSLog(@"%d",(int)numberAry.count);
     NSLog(@"%d",(int)questionNumber);
     NSLog(@"%d",(int)correctCount);
-    if (numberAry.count != 0){
+    if (numberAry.count != 0) {
         //乱数を生成
         int n = arc4random() % numberAry.count;
         //乱数の数値にしたがって配列から文字列を取り出す
@@ -107,10 +107,10 @@ NSTimer *timer;
         questionNumber = [numberAry[n]integerValue];
         //取り出した文字列を削除
         [numberAry removeObjectAtIndex:n];
-    }else{
+    } else {
         NSLog(@"重複のない乱数はありません。");
     }
-    switch(questionNumber){
+    switch(questionNumber) {
         case 0:
             self.problem.text = @"マダラシロエリハゲワシは高度、約10000mよりも高いところを飛べる。";
             answer=YES; break;
@@ -149,11 +149,11 @@ NSTimer *timer;
     NSLog(@"マルボタン");
     if (isAnswerButtonsEnable) {
         isAnswerButtonsEnable = NO;
-        if (answer ==YES){
+        if (answer ==YES) {
             correctCount++;
             self.problem.text = @"正解";
             [self crrectSound:self.sound];
-        }else{
+        } else {
             self.problem.text = @"不正解";
             [self blipSound:self.sound];
         }
@@ -166,11 +166,11 @@ NSTimer *timer;
     NSLog(@"バツボタン");
     if (isAnswerButtonsEnable) {
         isAnswerButtonsEnable = NO;
-        if (answer ==NO){
+        if (answer ==NO) {
             correctCount++;
             self.problem.text = @"正解";
             [self crrectSound:self.sound];
-        }else{
+        } else {
             self.problem.text = @"不正解";
             [self blipSound:self.sound];
         }
@@ -179,12 +179,11 @@ NSTimer *timer;
 }
 
 //正解不正解表示時間
-- (void)startTimer{
+- (void)startTimer {
     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(oneSecond:)userInfo:nil repeats:NO];
 }
 
-- (void)crrectSound:(NSString*)scaleName
-{
+- (void)crrectSound:(NSString*)scaleName {
     //音楽ファイル名を作成
     NSString *soundFileName = [NSString stringWithFormat:@"crrect_answer1"];
     //音楽ファイルのファイルパス(音楽ファイルがデータ上どこにあるか)を作成
@@ -200,8 +199,7 @@ NSTimer *timer;
     [self.player play];
 }
 
-- (void)blipSound:(NSString*)scaleName
-{
+- (void)blipSound:(NSString*)scaleName {
     //音楽ファイル名を作成
     NSString *soundFileName = [NSString stringWithFormat:@"blip01"];
     //音楽ファイルのファイルパス(音楽ファイルがデータ上どこにあるか)を作成

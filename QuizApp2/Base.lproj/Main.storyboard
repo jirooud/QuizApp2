@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,34 +15,80 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1J-AZ-PGx">
-                                <rect key="frame" x="111" y="516" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1J-AZ-PGx">
+                                <rect key="frame" x="28" y="368" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hge-6g-OzM"/>
+                                    <constraint firstAttribute="width" constant="100" id="qsu-3m-K3a"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="maru.png"/>
                                 <connections>
                                     <action selector="circleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znz-mr-wKY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaZ-op-vmI">
-                                <rect key="frame" x="296" y="516" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaZ-op-vmI">
+                                <rect key="frame" x="192" y="368" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4L8-fr-bo6"/>
+                                    <constraint firstAttribute="width" constant="100" id="Cak-8w-lnA"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="batsu.png"/>
                                 <connections>
                                     <action selector="crossButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hMQ-R6-SJs"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ONe-Fe-eNQ">
-                                <rect key="frame" x="87" y="101" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ONe-Fe-eNQ">
+                                <rect key="frame" x="36" y="105" width="248" height="213"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoD-aH-wlP">
+                                <rect key="frame" x="131" y="354" width="58" height="214"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="fm5-vW-iaJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCY-VF-mSy">
+                                <rect key="frame" x="0.0" y="354" width="25" height="214"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-t1-MEZ">
+                                <rect key="frame" x="295" y="354" width="25" height="214"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lcN-t1-MEZ" firstAttribute="leading" secondItem="FaZ-op-vmI" secondAttribute="trailing" constant="3" id="0sZ-cy-kwb"/>
+                            <constraint firstItem="F1J-AZ-PGx" firstAttribute="top" secondItem="ONe-Fe-eNQ" secondAttribute="bottom" constant="50" id="30k-5P-x3D"/>
+                            <constraint firstItem="jCY-VF-mSy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="334" id="3k3-Xu-H9B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F1J-AZ-PGx" secondAttribute="bottom" constant="100" id="6sD-6X-0V0"/>
+                            <constraint firstItem="FaZ-op-vmI" firstAttribute="top" secondItem="ONe-Fe-eNQ" secondAttribute="bottom" constant="50" id="BLr-di-Nm2"/>
+                            <constraint firstAttribute="trailing" secondItem="ONe-Fe-eNQ" secondAttribute="trailing" constant="36" id="FEQ-Cl-HNc"/>
+                            <constraint firstAttribute="trailing" secondItem="lcN-t1-MEZ" secondAttribute="trailing" id="GIy-PJ-1ev"/>
+                            <constraint firstItem="jCY-VF-mSy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OxB-c2-Vmc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jCY-VF-mSy" secondAttribute="bottom" id="QF7-bM-gu5"/>
+                            <constraint firstItem="FaZ-op-vmI" firstAttribute="leading" secondItem="MoD-aH-wlP" secondAttribute="trailing" constant="3" id="QZU-aP-hTn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FaZ-op-vmI" secondAttribute="bottom" constant="100" id="Rbv-K8-haP"/>
+                            <constraint firstItem="MoD-aH-wlP" firstAttribute="top" secondItem="ONe-Fe-eNQ" secondAttribute="bottom" constant="36" id="Rk2-tl-yc3"/>
+                            <constraint firstItem="MoD-aH-wlP" firstAttribute="leading" secondItem="F1J-AZ-PGx" secondAttribute="trailing" constant="3" id="Rrb-9m-hkS"/>
+                            <constraint firstItem="ONe-Fe-eNQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="Uys-2u-tnE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lcN-t1-MEZ" secondAttribute="bottom" id="VrE-p1-czC"/>
+                            <constraint firstItem="ONe-Fe-eNQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aFA-km-rAF"/>
+                            <constraint firstItem="lcN-t1-MEZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="334" id="fja-uK-glN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MoD-aH-wlP" secondAttribute="bottom" id="o2q-17-lRf"/>
+                            <constraint firstItem="ONe-Fe-eNQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="rbg-VC-Rtt"/>
+                            <constraint firstItem="MoD-aH-wlP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uqK-YS-HbJ"/>
+                            <constraint firstItem="F1J-AZ-PGx" firstAttribute="leading" secondItem="jCY-VF-mSy" secondAttribute="trailing" constant="3" id="yZL-cQ-ulj"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="problem" destination="ONe-Fe-eNQ" id="eaA-Ye-MXZ"/>
                         <segue destination="hzc-Cq-TlC" kind="presentation" identifier="connect" id="Bby-xb-qnV"/>
@@ -49,6 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="321" y="251"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="zBY-8O-XNH">
@@ -59,27 +107,38 @@
                         <viewControllerLayoutGuide type="bottom" id="mDt-HB-2nI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7qu-2y-XD2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qj-sl-5pT">
-                                <rect key="frame" x="184" y="516" width="46" height="30"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="returnButton:" destination="hzc-Cq-TlC" eventType="touchUpInside" id="jsF-aw-4WN"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8k2-ky-aPH">
-                                <rect key="frame" x="87" y="94" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8k2-ky-aPH">
+                                <rect key="frame" x="36" y="105" width="248" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qj-sl-5pT">
+                                <rect key="frame" x="133" y="412" width="54" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="returnButton:" destination="hzc-Cq-TlC" eventType="touchUpInside" id="jsF-aw-4WN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8k2-ky-aPH" firstAttribute="centerX" secondItem="7qu-2y-XD2" secondAttribute="centerX" id="5Fg-bP-ZOd"/>
+                            <constraint firstItem="8k2-ky-aPH" firstAttribute="top" secondItem="GVY-Jw-rKy" secondAttribute="bottom" constant="85" id="VMe-mQ-Xyk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8k2-ky-aPH" secondAttribute="trailing" constant="20" id="YRW-6U-Bcl"/>
+                            <constraint firstItem="8k2-ky-aPH" firstAttribute="leading" secondItem="7qu-2y-XD2" secondAttribute="leadingMargin" constant="20" id="baX-LT-X37"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0qj-sl-5pT" secondAttribute="trailing" constant="117" id="oaG-Yo-51m"/>
+                            <constraint firstItem="0qj-sl-5pT" firstAttribute="leading" secondItem="7qu-2y-XD2" secondAttribute="leadingMargin" constant="117" id="uE8-2R-V2p"/>
+                            <constraint firstItem="mDt-HB-2nI" firstAttribute="top" secondItem="0qj-sl-5pT" secondAttribute="bottom" constant="126" id="v2Y-92-f7W"/>
+                            <constraint firstItem="0qj-sl-5pT" firstAttribute="centerX" secondItem="7qu-2y-XD2" secondAttribute="centerX" id="wOC-kx-fct"/>
+                            <constraint firstItem="0qj-sl-5pT" firstAttribute="top" secondItem="8k2-ky-aPH" secondAttribute="bottom" constant="179" id="xYE-pB-maH"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="result" destination="8k2-ky-aPH" id="aqy-cK-dQQ"/>
                     </connections>
