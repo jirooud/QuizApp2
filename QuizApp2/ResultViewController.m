@@ -27,8 +27,8 @@
 
 //正答率表示
 - (void)resultViewText {
-    NSLog(@"%d",(int)_response);
-    self.result.text = [NSString stringWithFormat:@"正答率%d%%",(int)((_response / (float)5) * 100)];
+    NSLog(@"%ld",(long)_response);
+    self.result.text = [NSString stringWithFormat:@"正答率%d%%",(int)((_response * 100 / 5) )];
 }
 
 /*
